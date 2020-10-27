@@ -1,0 +1,17 @@
+<html>
+    <title>OTP Validation</title>
+   <body>
+    <form action="{% url 'verify_otp' %}" method="POST">
+        {% csrf_token %}
+        <p>Enter OTP: {{ form.OTP }}</p>
+        <input type="submit" value="Verify OTP">
+        <button><a href="{% url 'send_otp' %}">Resend OTP</a></button>
+
+                <br><br>
+                {% if message %}
+                <span style='color: red;'> {{message}}</span>
+                {% endif %}
+        </form>
+    </body> 
+    
+</html>

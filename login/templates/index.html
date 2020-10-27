@@ -1,0 +1,26 @@
+<html>
+    <body>
+        <h1>User Dashboard</h1>
+        <form action="" method="POST">
+            {%csrf_token%}
+            <!-- {{form}} -->
+            
+            <p>Username: {{context.log_username}}</p> 
+            <p>Password: {{context.log_password}}</p> 
+            <p>Firstname: {{context.log_firstname}}</p> 
+            <p>Lastname: {{context.log_lastname}}</p> 
+            <p>Mobile number: {{context.log_mobile}}</p> 
+            <p>Customer ID: {{context.log_custid}}</p> 
+            <p>Email: {{context.log_email}}</p> 
+            <p>Security Question: {{context.log_sec}}</p> 
+            <p>Security Answer: {{context.log_ans}}</p> 
+            <br>
+            
+           
+        <a href="{% url 'logout' %}">Logout</a><br><br>
+        <a href="#">Recharge</a><br><br>
+        <a href="#">Renewal</a><br><br>
+        <a href="#">Cancel Service</a>
+    </form>
+    </body>
+</html>

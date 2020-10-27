@@ -1,0 +1,194 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .panel-heading,.panel button{
+            background-color:#9C27B0 ;
+            color:whitesmoke;
+            border-color:#9C27B0;
+        }
+        .panel button:hover{
+            background-color:#b140c5;
+            border-color:#b140c5;
+            color:whitesmoke
+        }
+       .navbar{
+            background-color:#9C27B0;
+        }
+      
+        #mydropdown a{
+            color:whitesmoke;
+          
+        }
+        #mydropdown .active a{
+            color:black;
+           
+        }
+       
+        .bg-image{
+           background-image: url('{%static "registration/images/2.jpg" %}');
+           background-repeat: no-repeat;
+           background-size: cover;
+              
+       }
+
+      
+   </style>
+   <title>User Account</title>
+</head>
+<body class='bg-image'>
+    <nav class="navbar navbar-default navbar-fixed-top" >
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.iotricx.com" style='color:whitesmoke'>IOTRIX</a>
+            <button class='navbar-toggle collapsed' data-toggle='collapse' data-target='#mydropdown'>
+                <span class='icon-bar whitesmoke'></span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+            </button>
+          </div>
+          <div class='collapse navbar-collapse' id='mydropdown'>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Support</a></li>
+               
+            </ul>
+        </div>
+        </div>
+      </nav>
+    
+
+      <div class="container" style="padding-top:5%">
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3">
+                <div class="panel">
+                    <div class="panel-heading" style='height:70px'>
+                        <h3>Sign Up</h3></div>
+                    <div class="panel-body">
+
+
+    <form action="{%url 'registration:register'%}" method='POST' autocomplete="off">
+        {% csrf_token %}
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-text-size"></i></span>
+            {{form.first_name}}
+            
+          </div><br>
+          
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-text-size"></i></span>
+            {{form.last_name}}
+            
+          </div><br>
+          
+         
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            {{form.email}}
+           
+          </div> <br>
+          <span style='color:red'> {{form.email.errors}}</span>
+          
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+            
+            {{form.reg_CountryCode}}
+           
+            
+           
+          </div><br>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+            {{form.reg_MobileNumber}}
+            
+          </div>
+          <span style='color:red'> {{form.reg_MobileNumber.errors}}</span>
+          <br>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            {{form.username}}
+          </div><br>
+
+          <span style='color:red'> {{form.username.errors}}</span>
+          
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+           {{form.password1}}
+           
+          </div>
+          <!-- {{form.password1.help_text}} -->
+          <span style='color:red'> {{form.password1.errors}}</span>
+          <br>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-check"></i></span>
+            {{form.password2}}   
+          </div>
+          <!-- {{form.password2.help_text}} -->
+           <br>
+
+          <span style='color:red'> {{form.password2.errors}}</span>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-arrow-right"></i></span>
+            {{form.reg_Gender}}
+          </div><br>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            {{form.reg_ReferalId}}
+            
+
+          </div><br>
+          <span style='color:red'> {{form.reg_ReferalId.errors}}</span>
+          
+          
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-question-sign"></i></span>
+            {{form.reg_SecurityQuestion}}
+          </div><br>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+            {{form.reg_SecurityAnswer}}
+           
+          </div><br>
+          <span style='color:red'> {{form.reg_SecurityAnswer.errors}}</span>
+          <br>
+      
+            <div>
+            {{form.reg_Terms}}
+            &nbsp;
+            By signing up, you agree to our <a href='#'>Terms & Conditions</a>
+          </div><br>
+          
+           
+            <div class="form-group text-center">
+                <button type="submit" class="btn form-control" style='border-radius:1rem'>Submit</button>
+                
+            </div>
+<!-- <form action="">
+    {{form.as_p}}
+</form> -->
+
+
+        
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+</body>
+</html>

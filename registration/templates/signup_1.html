@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <style>
+         .panel-heading,.panel button{
+             background-color:#9C27B0 ;
+             color:whitesmoke;
+             border-color:#9C27B0;
+         }
+         .panel button:hover{
+             background-color:#b140c5;
+             border-color:#b140c5;
+             color:whitesmoke
+         }
+        .navbar{
+             background-color:#9C27B0;
+         }
+       
+         #mydropdown a{
+             color:whitesmoke;
+           
+         }
+         #mydropdown .active a{
+             color:black;
+            
+         }
+        
+         .bg-image{
+            background-image: url('images/2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+               
+        }
+
+       
+    </style>
+    <title>User Account</title>
+    
+</head>
+
+<body class='bg-image'>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.iotricx.com" style='color:whitesmoke'>IOTRIX</a>
+            <button class='navbar-toggle collapsed' data-toggle='collapse' data-target='#mydropdown'>
+                <span class='icon-bar whitesmoke'></span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+            </button>
+          </div>
+          <div class='collapse navbar-collapse' id='mydropdown'>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Support</a></li>
+               
+            </ul>
+        </div>
+        </div>
+      </nav>
+    <div class="container" style="padding-top:5%">
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3">
+                <div class="panel">
+                    <div class="panel-heading" style='height:70px'>
+                        <h3>Sign Up</h3></div>
+                    <div class="panel-body">
+                        <form action="signup.html">
+                            
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-text-size"></i></span>
+                            <input id="firstname" type="text" class="form-control" name="firstname" placeholder="Firstname">
+                          </div><br>
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-text-size"></i></span>
+                            <input id="lastname" type="text" class="form-control" name="lastname" placeholder="Lastname">
+                          </div><br>
+                         
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input id="emailId" type="email" class="form-control" name="emailId" placeholder="Email">
+                          </div><br>
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input id="phonenum" type="text" class="form-control" name="phonenum" placeholder="Phone Number">
+                          </div><br>
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="username" type="text" class="form-control" name="username" placeholder="Username">
+                          </div><br>
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+                          </div><br>
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-check"></i></span>
+                            <input id="confirm_password" type="password" class="form-control" name="confirm_password" placeholder="Confirm Password">
+                          </div><br>
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-arrow-right"></i></span>
+                            <select class='form-control'>
+                                <option value="" disabled selected>Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                               
+                                </select>
+                          </div><br>
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="referral" type="text" class="form-control" name="referral" placeholder="Referral Id">
+                          </div><br>
+                          
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-question-sign"></i></span>
+                            <select class='form-control'>
+                                <option value="" disabled selected>Security Question</option>
+                                <option value="1">What is your first pet's name?</option>
+                                <option value="2">Who is your favorite teacher?</option>
+                                <option value="3">What is the name of the town where you were born?</option>
+                                <option value="4">What elementary school did you attend?</option>
+                                </select>
+                          </div><br>
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                            <input id="sec_answer" type="text" class="form-control" name="sec_answer" placeholder="Answer">
+                          </div><br>
+                      
+                            
+                            <input id='terms' name='terms' type="checkbox">
+                            &nbsp;
+                            By signing up, you agree to our <a href='#'>Terms & Conditions</a>
+                          </div><br>
+                          
+                           
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn form-control" style='border-radius:1rem'>Submit</button>
+                                
+                            </div>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    <script>
+        $('.nav li').on('click',function(){
+            $('.nav li').removeClass('active');
+            $(this).addClass('active');
+        });
+    </script>
+</body>
+</html>

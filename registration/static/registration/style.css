@@ -1,0 +1,18 @@
+body{
+    background : white url{"images/background.JPG"};
+}
+.navbar{
+    border-radius : 0;
+}
+.navbar-bran{
+    font-family : 'Satisfy', cursive;
+}
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 65%;
+   
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+  }
+  

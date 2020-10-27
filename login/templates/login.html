@@ -1,0 +1,22 @@
+<html>
+    <title>Login</title>
+    <body>
+        <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}        
+        Username:{{form.username}}
+        <br><br>
+        Password:{{form.password}}
+        <br><br><a href="{% url 'mail' %}">Forget Password</a><br><br>
+        
+        
+        <input type="submit" value='Login'>
+        <br><br>
+        {% if message %}
+        <span style='color: red;'> {{message}}</span>
+        {% endif %}
+
+        
+
+        </form>
+    </body>
+</html>
